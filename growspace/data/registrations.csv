@@ -1,0 +1,6 @@
+id,event_id,full_name,ttl,nik,email,password,status,payment_status,payment_account,created_at
+1,1,Arjuna Wiwaha,2003-11-11,3276011100030001,arjuna@mail.com,arjuna_wiwaha,APPROVED,COMPLETED,1234567890,2025-05-05
+2,1,Srikandi Putri,2004-03-22,3276012200040002,srikandi@mail.com,srikandi_putri,PENDING,UNVERIFIED,9876543210,2025-05-06
+3,2,Gatot Kaca,2002-07-15,3276011500020003,gatot@mail.com,gatot_kaca,REJECTED,FAILED,1122334455,2025-05-07
+4,2,Dewi Shinta,2001-12-01,3276010112010004,shinta@mail.com,dewi_shinta,CANCELLED,UNVERIFIED,9988776655,2025-05-08
+5,3,Bima Sakti,2000-05-05,3276010500000005,bima@mail.com,bima_sakti,APPROVED,VERIFIED,5566778899,2025-05-09
