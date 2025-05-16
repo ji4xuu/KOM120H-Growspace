@@ -1,6 +1,4 @@
-Here’s a suggested **README.md** for your **Growspace** application:
 
----
 
 ## Growspace
 
