@@ -25,8 +25,8 @@ Before building and running Growspace, ensure you have:
 Clone the repository and prepare the build directory:
 
 ```bash
-git clone https://github.com/yourusername/growspace.git
-cd growspace
+https://github.com/ji4xuu/KOM120H-Growspace.git
+cd KOM120H-Growspace
 ```
 
 ---
