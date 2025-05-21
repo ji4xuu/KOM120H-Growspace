@@ -17,7 +17,7 @@ file(GLOB_RECURSE SOURCES
 )
 
 # Add executable
-add_executable(kuda ${SOURCES})
+add_executable(growspace ${SOURCES})
 
 # Untuk test (opsional - hanya jika kamu ingin build unit test juga)
 # enable_testing()

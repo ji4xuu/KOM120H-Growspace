@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <algorithm>
 #include "other.h"
+#include <windows.h>
 
 class ParticipantService {
 public:
@@ -23,7 +24,7 @@ public:
 
         
     // Tampilkan status pendaftaran
-    Registration getMyRegistrationStatus(int registrationId) const;
+    Registration* getMyRegistrationStatus(int registrationId);
 
 
     Event findEventId(int eventId) const; 

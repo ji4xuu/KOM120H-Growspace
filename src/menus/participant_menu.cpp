@@ -14,6 +14,7 @@ static void handleListEvents(ParticipantService& svc)
     std::string sortBy;
     std::string keyword;
     bool ascending;
+
     while(true){
         
         std::cout << "Masukkan kata kunci untuk mencari event (- untuk menampilkan semua): ";
@@ -30,13 +31,12 @@ static void handleListEvents(ParticipantService& svc)
                 sortByInput == "tanggal_selesai" ||
                 sortByInput == "tanggal_mulai_daftar" ||
                 sortByInput == "tanggal_selesai_daftar" ||
-                sortByInput == "sisa_kuota"
+                sortByInput == "sisa_kuota" ||
+                sortByInput == "-"
             ) {
                 sortBy = sortByInput;
-                break;
             } else {
                 std::cout << "Input kolom tidak dikenali. Menggunakan default: id.\n";
-                break;
             }
         }
     
@@ -161,53 +161,78 @@ static void handleCheckStatus(ParticipantService& svc){
 
     std::cout << "Masukkan ID Registrasi  : ";
     std::cin >> reg_id;
-    Registration reg = svc.getMyRegistrationStatus(reg_id);
+    Registration* reg = svc.getMyRegistrationStatus(reg_id);
     std::cout << "Masukkan Email          : ";
     std::cin >> email;
     std::cout << "Masukkan Password       : ";
     std::cin >> password;
-    if(reg.id == -1){
+    if(reg->id == -1){
         std::cout << "Belum ada pendaftaran.\n";
-    } else if (reg.email != email) {
+    } else if (reg->email != email) {
         std::cout << "\nEmail atau Password salah.\n";
         pause();
         return;
-    } else if (reg.password_hash != password) {
+    } else if (reg->password_hash != password) {
         std::cout << "\nEmail atau Password salah.\n";
         pause();
         return;
     }
     else {
-        std::string status_str;
-        switch (reg.status) {
-            case PENDING: status_str = "Pending"; break;
-            case APPROVED: status_str = "Approved"; break;
-            case REJECTED: status_str = "Rejected"; break;
-            case CANCELLED: status_str = "Cancelled"; break;
-        }
+        while(true){
+            std::string status_str;
+            switch (reg->status) {
+                case PENDING: status_str = "Pending"; break;
+                case APPROVED: status_str = "Approved"; break;
+                case REJECTED: status_str = "Rejected"; break;
+                case CANCELLED: status_str = "Cancelled"; break;
+            }
 
-        std::string payment_str;
-        switch (reg.payment_status) {
-            case VERIFIED: payment_str = "Verified"; break;
-            case UNVERIFIED: payment_str = "Unverified"; break;
-            case FAILED: payment_str = "Failed"; break;
+            std::string payment_str;
+            switch (reg->payment_status) {
+                case VERIFIED: payment_str = "Verified"; break;
+                case UNVERIFIED: payment_str = "Unverified"; break;
+                case FAILED: payment_str = "Failed"; break;
+            }
+            clearScreen();
+            std::cout << "============ Detail Status Registrasi ============\n\n";
+            std::cout << std::left << std::setw(LBL_W) << "ID Registrasi"   << ": " << reg->id            << "\n";
+            std::cout << std::left << std::setw(LBL_W) << "Event ID"         << ": " << reg->event_id     << "\n";
+            std::cout << std::left << std::setw(LBL_W) << "Nama Lengkap"    << ": " << reg->full_name    << "\n";
+            std::cout << std::left << std::setw(LBL_W) << "Tanggal Lahir"   << ": " << reg->ttl           << "\n";
+            std::cout << std::left << std::setw(LBL_W) << "NIK"             << ": " << reg->nik           << "\n";
+            std::cout << std::left << std::setw(LBL_W) << "Email"           << ": " << reg->email         << "\n";
+            std::cout << std::left << std::setw(LBL_W) << "Status Pendaftaran" << ": " << status_str      << "\n";
+            std::cout << std::left << std::setw(LBL_W) << "Status Pembayaran"  << ": " << payment_str << "\n";
+            std::cout << std::left << std::setw(LBL_W) << "Dibuat pada"      << ": " << reg->created_at    << "\n\n";
+            
+            std::cout << R"(         1. Batalkan Pendaftaran Event               0. Kembali
+            )" << '\n' << '\n';
+            std::cout << "Masukkan pilihan Anda [0 - 1] : ";
+            int pilihan;
+            std::cin >> pilihan;
+            if(pilihan == 1){
+                std::cout << "Apakah anda ingin membatalkan pendaftaran ini? (y/n): ";
+                char confirm;
+                std::cin >> confirm;
+                if (confirm == 'y' || confirm == 'Y') {
+                    reg->status = CANCELLED;
+                    std::cout << "Pendaftaran berhasil dibatalkan.\n";
+                }
+            }
+            else if(pilihan == 0){
+                pause();
+                std::cout << "Kembali ke Dashboard Peserta..." << '\n';
+                Sleep(1000);
+                break;
+            }
+            else{
+                std::cout << "Pilihan tidak valid.\n";
+                continue;
+            }
         }
-        clearScreen();
-        std::cout << "=== Detail Status Registrasi ===\n\n";
-        std::cout << std::left << std::setw(LBL_W) << "ID Registrasi"   << ": " << reg.id            << "\n";
-        std::cout << std::left << std::setw(LBL_W) << "Event ID"         << ": " << reg.event_id     << "\n";
-        std::cout << std::left << std::setw(LBL_W) << "Nama Lengkap"    << ": " << reg.full_name    << "\n";
-        std::cout << std::left << std::setw(LBL_W) << "Tanggal Lahir"   << ": " << reg.ttl           << "\n";
-        std::cout << std::left << std::setw(LBL_W) << "NIK"             << ": " << reg.nik           << "\n";
-        std::cout << std::left << std::setw(LBL_W) << "Email"           << ": " << reg.email         << "\n";
-        std::cout << std::left << std::setw(LBL_W) << "Status Pendaftaran" << ": " << status_str      << "\n";
-        std::cout << std::left << std::setw(LBL_W) << "Status Pembayaran"  << ": " << payment_str << "\n";
-        std::cout << std::left << std::setw(LBL_W) << "Dibuat pada"      << ": " << reg.created_at    << "\n\n";
 
     }
-    pause();
-    std::cout << "Kembali ke Dashboard Peserta..." << '\n';
-    Sleep(1000);
+
 }
 
 int runParticipantMenu(ParticipantService& svc) {

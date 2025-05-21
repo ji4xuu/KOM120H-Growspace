@@ -1,3 +1,0 @@
-D:/Kuliah/Strukdat/Growspace/growspace/build/CMakeFiles/kuda.dir
-D:/Kuliah/Strukdat/Growspace/growspace/build/CMakeFiles/edit_cache.dir
-D:/Kuliah/Strukdat/Growspace/growspace/build/CMakeFiles/rebuild_cache.dir

@@ -1,8 +1,8 @@
-# Install script for directory: D:/Kuliah/Strukdat/KOM120H-Growspace
+# Install script for directory: D:/Kuliah/Strukdat/KOM120H-Growspace/build/CMakeFiles/CMakeScratch/TryCompile-v5154u
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Growspace")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CMAKE_TRY_COMPILE")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,15 +32,10 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set path to fallback-tool for dependency-resolution.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/MinGW/bin/objdump.exe")
-endif()
-
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Kuliah/Strukdat/KOM120H-Growspace/build/install_local_manifest.txt"
+  file(WRITE "D:/Kuliah/Strukdat/KOM120H-Growspace/build/CMakeFiles/CMakeScratch/TryCompile-v5154u/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -56,6 +51,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Kuliah/Strukdat/KOM120H-Growspace/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "D:/Kuliah/Strukdat/KOM120H-Growspace/build/CMakeFiles/CMakeScratch/TryCompile-v5154u/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

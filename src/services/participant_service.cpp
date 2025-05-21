@@ -61,29 +61,25 @@ void ParticipantService::showEvents(const std::vector<Event> &events, const std:
                   << std::setw(11) << kuotaInfo << '\n';
     }
 }
-
-Registration ParticipantService::getMyRegistrationStatus(int registrationId) const{
-    for (const auto& regs : _registrations) {
+Registration* ParticipantService::getMyRegistrationStatus(int registrationId) {
+    for (auto& regs : _registrations) {
         if (regs.id == registrationId)
-            return regs;
+            return &regs; // return pointer ke elemen asli
     }
-    // default-constructed Event sebagai “not found”
-    Registration none{};
-    none.id = -1;
-    return none;
+    return nullptr; // tidak ditemukan
 }
 
 std::vector<Event> ParticipantService::listEvents(const std::string& keyword, const std::string& sortBy, bool ascending) const{
     std::vector<Event> result;
 
     for (const auto& ev : _events){
-        if (keyword.empty() || ev.title.find(keyword) != std::string::npos || ev.description.find(keyword) != std::string::npos || 
+        if (keyword == "-" || ev.title.find(keyword) != std::string::npos || ev.description.find(keyword) != std::string::npos || 
         ev.start_date.find(keyword) != std::string::npos || ev.end_date.find(keyword) != std::string::npos){
             result.push_back(ev);
         }
     }
     auto comparator = [&](const Event& a, const Event& b) {
-        if (sortBy == "id") {return ascending ? a.id < b.id : a.id > b.id;}
+        if (sortBy == "id" || sortBy == "-") {return ascending ? a.id < b.id : a.id > b.id;}
         else if (sortBy == "title") {return ascending ? a.title < b.title : a.title > b.title;}
         else if (sortBy == "tanggal_mulai") {return ascending ? a.start_date < b.start_date : a.start_date > b.start_date;}
         else if (sortBy == "tanggal_selesai") {return ascending ? a.end_date < b.end_date : a.end_date > b.end_date;}
@@ -116,43 +112,49 @@ bool ParticipantService::registerToEvent(int eventId){
     do {
         clearScreen();
         std::cout << "Masukkan informasi berikut untuk menyelesaikan pendaftaran." << '\n';
-        std::cout << "Nama Lengkap        : ";
+        std::cout << "Nama Lengkap                : ";
         std::getline(std::cin, full_name);
         if (full_name.empty()){
             std::cout << "Nama tidak boleh kosong.\n";
+            Sleep(1000);
             continue;
         }
-        std::cout << "Tanggal Lahir       : ";
+        std::cout << "Tanggal Lahir (YYYY-MM-DD)  : ";
         std::getline(std::cin, ttl);
         if (ttl.empty()){
             std::cout << "Tanggal lahir tidak boleh kosong. (contoh: Jakarta, 2000-01-31).\n";
+            Sleep(1000);
             continue;
         }
-        std::cout << "NIK (16 digit)      : ";
+        std::cout << "NIK (16 digit)              : ";
         std::getline(std::cin, nik);
         if (nik.size() != 16 || !std::all_of(nik.begin(), nik.end(), ::isdigit)){
             std::cout << "NIK harus 16 digit angka.\n";
+            Sleep(1000);
             continue;
         }
-        std::cout << "Email               : ";
+        std::cout << "Email                       : ";
         std::getline(std::cin, email);
         auto at = email.find('@');
         auto dot = email.rfind('.');
         if (at == std::string::npos || dot == std::string::npos || dot < at){
             std::cout << "Format email tidak valid.\n";
+            Sleep(1000);
             continue;
         }
-        std::cout << "Password (>=8 char) : ";
+        std::cout << "Password (>=8 char)         : ";
         std::getline(std::cin, password);
         if (password.length() < 8){
             std::cout << "Password minimal 8 karakter.\n";
+            Sleep(1000);
             continue;
         }
         if (ev.is_paid) {
-            std::cout << "No. Rekening/VA     : ";
+            std::cout << "No. Rekening/VA             : ";
             std::getline(std::cin, payment_acc);
             if (payment_acc.empty()){
                 std::cout << "Harap masukkan nomor pembayaran.\n";
+                Sleep(1000);
                 continue;
             }
             r.payment_status = UNVERIFIED;
@@ -182,9 +184,35 @@ bool ParticipantService::registerToEvent(int eventId){
     if (ev.is_paid) {
         _verifQueue.enqueue(r);
     }
-    Registration reg = getMyRegistrationStatus(r.id);
-    std::string status_str;
+    Registration* reg = getMyRegistrationStatus(r.id);
+    clearScreen();
     std::cout << "Pendaftaran berhasil.\n";
+    std::string status_str;
+    switch (reg->status) {
+        case PENDING: status_str = "Pending"; break;
+        case APPROVED: status_str = "Approved"; break;
+        case REJECTED: status_str = "Rejected"; break;
+        case CANCELLED: status_str = "Cancelled"; break;
+    }
+
+    std::string payment_str;
+    switch (reg->payment_status) {
+        case VERIFIED: payment_str = "Verified"; break;
+        case UNVERIFIED: payment_str = "Unverified"; break;
+        case FAILED: payment_str = "Failed"; break;
+    }
+
+    constexpr int LBL_W = 18;  
+    std::cout << "=== Detail Status Registrasi ===\n\n";
+    std::cout << std::left << std::setw(LBL_W) << "ID Registrasi"   << ": " << reg->id            << "\n";
+    std::cout << std::left << std::setw(LBL_W) << "Event ID"         << ": " << reg->event_id     << "\n";
+    std::cout << std::left << std::setw(LBL_W) << "Nama Lengkap"    << ": " << reg->full_name    << "\n";
+    std::cout << std::left << std::setw(LBL_W) << "Tanggal Lahir"   << ": " << reg->ttl           << "\n";
+    std::cout << std::left << std::setw(LBL_W) << "NIK"             << ": " << reg->nik           << "\n";
+    std::cout << std::left << std::setw(LBL_W) << "Email"           << ": " << reg->email         << "\n";
+    std::cout << std::left << std::setw(LBL_W) << "Status Pendaftaran" << ": " << status_str      << "\n";
+    std::cout << std::left << std::setw(LBL_W) << "Status Pembayaran"  << ": " << payment_str << "\n";
+    std::cout << std::left << std::setw(LBL_W) << "Dibuat pada"      << ": " << reg->created_at    << "\n\n";
     std::cout << "Simpan baik-baik data registrasi anda.\n";
     return false;
 }

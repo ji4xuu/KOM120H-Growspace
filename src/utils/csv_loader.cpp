@@ -127,7 +127,7 @@ void writeEventToCSV(const std::vector<Event>& events, const std::string& filena
                  << event.registration_start << ","
                  << event.registration_end << ","
                  << event.quota << ","
-                 << (event.is_paid ? "Paid" : "Free") << ","
+                 << (event.is_paid ? "true" : "false") << ","
                  << event.type << ","
                  << event.created_at << "\n";
         }
@@ -140,21 +140,21 @@ void writeEventToCSV(const std::vector<Event>& events, const std::string& filena
 void writeRegistrationToCSV(const std::vector<Registration>& registrations, const std::string& filename) {
     std::ofstream file(filename);
     if (file.is_open()) {
-        file << "id,event_id,full_name,ttl,nik,email,status,payment_status,created_at\n";  // Header CSV
+        file << "id,event_id,full_name,ttl,nik,email,password,status,payment_status,payment_account,created_at\n";  // Header CSV
         for (const auto& registration : registrations) {
             std::string status_str;
             switch (registration.status) {
-                case PENDING: status_str = "Pending"; break;
-                case APPROVED: status_str = "Approved"; break;
-                case REJECTED: status_str = "Rejected"; break;
-                case CANCELLED: status_str = "Cancelled"; break;
+                case PENDING: status_str = "PENDING"; break;
+                case APPROVED: status_str = "APPROVED"; break;
+                case REJECTED: status_str = "REJECTED"; break;
+                case CANCELLED: status_str = "CANCELLED"; break;
             }
 
             std::string payment_str;
             switch (registration.payment_status) {
-                case VERIFIED: payment_str = "Verified"; break;
-                case UNVERIFIED: payment_str = "Unverified"; break;
-                case FAILED: payment_str = "Failed"; break;
+                case VERIFIED: payment_str = "VERIFIED"; break;
+                case UNVERIFIED: payment_str = "UNVERIFIED"; break;
+                case FAILED: payment_str = "FAILED"; break;
             }
 
             file << registration.id << ","
@@ -166,6 +166,7 @@ void writeRegistrationToCSV(const std::vector<Registration>& registrations, cons
                  << registration.password_hash << ","
                  << status_str << ","
                  << payment_str << ","
+                 << registration.payment_account << ","
                  << registration.created_at << "\n";
         }
         file.close();

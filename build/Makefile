@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Kuliah\Strukdat\Growspace\growspace
+CMAKE_SOURCE_DIR = D:\Kuliah\Strukdat\KOM120H-Growspace
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Kuliah\Strukdat\Growspace\growspace\build
+CMAKE_BINARY_DIR = D:\Kuliah\Strukdat\KOM120H-Growspace\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Strukdat\Growspace\growspace\build\CMakeFiles D:\Kuliah\Strukdat\Growspace\growspace\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles D:\Kuliah\Strukdat\KOM120H-Growspace\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Strukdat\Growspace\growspace\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named kuda
+# Target rules for targets named growspace
 
 # Build rule for target.
-kuda: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 kuda
-.PHONY : kuda
+growspace: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 growspace
+.PHONY : growspace
 
 # fast build rule for target.
-kuda/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/build
-.PHONY : kuda/fast
+growspace/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/build
+.PHONY : growspace/fast
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -141,7 +141,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +149,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/menus/admin_menu.obj: src/menus/admin_menu.cpp.obj
@@ -157,7 +157,7 @@ src/menus/admin_menu.obj: src/menus/admin_menu.cpp.obj
 
 # target to build an object file
 src/menus/admin_menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/menus/admin_menu.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.obj
 .PHONY : src/menus/admin_menu.cpp.obj
 
 src/menus/admin_menu.i: src/menus/admin_menu.cpp.i
@@ -165,7 +165,7 @@ src/menus/admin_menu.i: src/menus/admin_menu.cpp.i
 
 # target to preprocess a source file
 src/menus/admin_menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/menus/admin_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.i
 .PHONY : src/menus/admin_menu.cpp.i
 
 src/menus/admin_menu.s: src/menus/admin_menu.cpp.s
@@ -173,7 +173,7 @@ src/menus/admin_menu.s: src/menus/admin_menu.cpp.s
 
 # target to generate assembly for a file
 src/menus/admin_menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/menus/admin_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.s
 .PHONY : src/menus/admin_menu.cpp.s
 
 src/menus/main_menu.obj: src/menus/main_menu.cpp.obj
@@ -181,7 +181,7 @@ src/menus/main_menu.obj: src/menus/main_menu.cpp.obj
 
 # target to build an object file
 src/menus/main_menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/menus/main_menu.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/menus/main_menu.cpp.obj
 .PHONY : src/menus/main_menu.cpp.obj
 
 src/menus/main_menu.i: src/menus/main_menu.cpp.i
@@ -189,7 +189,7 @@ src/menus/main_menu.i: src/menus/main_menu.cpp.i
 
 # target to preprocess a source file
 src/menus/main_menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/menus/main_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/menus/main_menu.cpp.i
 .PHONY : src/menus/main_menu.cpp.i
 
 src/menus/main_menu.s: src/menus/main_menu.cpp.s
@@ -197,7 +197,7 @@ src/menus/main_menu.s: src/menus/main_menu.cpp.s
 
 # target to generate assembly for a file
 src/menus/main_menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/menus/main_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/menus/main_menu.cpp.s
 .PHONY : src/menus/main_menu.cpp.s
 
 src/menus/participant_menu.obj: src/menus/participant_menu.cpp.obj
@@ -205,7 +205,7 @@ src/menus/participant_menu.obj: src/menus/participant_menu.cpp.obj
 
 # target to build an object file
 src/menus/participant_menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/menus/participant_menu.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.obj
 .PHONY : src/menus/participant_menu.cpp.obj
 
 src/menus/participant_menu.i: src/menus/participant_menu.cpp.i
@@ -213,7 +213,7 @@ src/menus/participant_menu.i: src/menus/participant_menu.cpp.i
 
 # target to preprocess a source file
 src/menus/participant_menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/menus/participant_menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.i
 .PHONY : src/menus/participant_menu.cpp.i
 
 src/menus/participant_menu.s: src/menus/participant_menu.cpp.s
@@ -221,7 +221,7 @@ src/menus/participant_menu.s: src/menus/participant_menu.cpp.s
 
 # target to generate assembly for a file
 src/menus/participant_menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/menus/participant_menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.s
 .PHONY : src/menus/participant_menu.cpp.s
 
 src/services/admin_service.obj: src/services/admin_service.cpp.obj
@@ -229,7 +229,7 @@ src/services/admin_service.obj: src/services/admin_service.cpp.obj
 
 # target to build an object file
 src/services/admin_service.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/services/admin_service.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/services/admin_service.cpp.obj
 .PHONY : src/services/admin_service.cpp.obj
 
 src/services/admin_service.i: src/services/admin_service.cpp.i
@@ -237,7 +237,7 @@ src/services/admin_service.i: src/services/admin_service.cpp.i
 
 # target to preprocess a source file
 src/services/admin_service.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/services/admin_service.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/services/admin_service.cpp.i
 .PHONY : src/services/admin_service.cpp.i
 
 src/services/admin_service.s: src/services/admin_service.cpp.s
@@ -245,7 +245,7 @@ src/services/admin_service.s: src/services/admin_service.cpp.s
 
 # target to generate assembly for a file
 src/services/admin_service.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/services/admin_service.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/services/admin_service.cpp.s
 .PHONY : src/services/admin_service.cpp.s
 
 src/services/auth_service.obj: src/services/auth_service.cpp.obj
@@ -253,7 +253,7 @@ src/services/auth_service.obj: src/services/auth_service.cpp.obj
 
 # target to build an object file
 src/services/auth_service.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/services/auth_service.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/services/auth_service.cpp.obj
 .PHONY : src/services/auth_service.cpp.obj
 
 src/services/auth_service.i: src/services/auth_service.cpp.i
@@ -261,7 +261,7 @@ src/services/auth_service.i: src/services/auth_service.cpp.i
 
 # target to preprocess a source file
 src/services/auth_service.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/services/auth_service.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/services/auth_service.cpp.i
 .PHONY : src/services/auth_service.cpp.i
 
 src/services/auth_service.s: src/services/auth_service.cpp.s
@@ -269,7 +269,7 @@ src/services/auth_service.s: src/services/auth_service.cpp.s
 
 # target to generate assembly for a file
 src/services/auth_service.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/services/auth_service.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/services/auth_service.cpp.s
 .PHONY : src/services/auth_service.cpp.s
 
 src/services/participant_service.obj: src/services/participant_service.cpp.obj
@@ -277,7 +277,7 @@ src/services/participant_service.obj: src/services/participant_service.cpp.obj
 
 # target to build an object file
 src/services/participant_service.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/services/participant_service.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/services/participant_service.cpp.obj
 .PHONY : src/services/participant_service.cpp.obj
 
 src/services/participant_service.i: src/services/participant_service.cpp.i
@@ -285,7 +285,7 @@ src/services/participant_service.i: src/services/participant_service.cpp.i
 
 # target to preprocess a source file
 src/services/participant_service.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/services/participant_service.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/services/participant_service.cpp.i
 .PHONY : src/services/participant_service.cpp.i
 
 src/services/participant_service.s: src/services/participant_service.cpp.s
@@ -293,7 +293,7 @@ src/services/participant_service.s: src/services/participant_service.cpp.s
 
 # target to generate assembly for a file
 src/services/participant_service.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/services/participant_service.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/services/participant_service.cpp.s
 .PHONY : src/services/participant_service.cpp.s
 
 src/utils/csv_loader.obj: src/utils/csv_loader.cpp.obj
@@ -301,7 +301,7 @@ src/utils/csv_loader.obj: src/utils/csv_loader.cpp.obj
 
 # target to build an object file
 src/utils/csv_loader.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/csv_loader.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.obj
 .PHONY : src/utils/csv_loader.cpp.obj
 
 src/utils/csv_loader.i: src/utils/csv_loader.cpp.i
@@ -309,7 +309,7 @@ src/utils/csv_loader.i: src/utils/csv_loader.cpp.i
 
 # target to preprocess a source file
 src/utils/csv_loader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/csv_loader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.i
 .PHONY : src/utils/csv_loader.cpp.i
 
 src/utils/csv_loader.s: src/utils/csv_loader.cpp.s
@@ -317,7 +317,7 @@ src/utils/csv_loader.s: src/utils/csv_loader.cpp.s
 
 # target to generate assembly for a file
 src/utils/csv_loader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/csv_loader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.s
 .PHONY : src/utils/csv_loader.cpp.s
 
 src/utils/hashing.obj: src/utils/hashing.cpp.obj
@@ -325,7 +325,7 @@ src/utils/hashing.obj: src/utils/hashing.cpp.obj
 
 # target to build an object file
 src/utils/hashing.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/hashing.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj
 .PHONY : src/utils/hashing.cpp.obj
 
 src/utils/hashing.i: src/utils/hashing.cpp.i
@@ -333,7 +333,7 @@ src/utils/hashing.i: src/utils/hashing.cpp.i
 
 # target to preprocess a source file
 src/utils/hashing.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/hashing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/hashing.cpp.i
 .PHONY : src/utils/hashing.cpp.i
 
 src/utils/hashing.s: src/utils/hashing.cpp.s
@@ -341,7 +341,7 @@ src/utils/hashing.s: src/utils/hashing.cpp.s
 
 # target to generate assembly for a file
 src/utils/hashing.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/hashing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/hashing.cpp.s
 .PHONY : src/utils/hashing.cpp.s
 
 src/utils/other.obj: src/utils/other.cpp.obj
@@ -349,7 +349,7 @@ src/utils/other.obj: src/utils/other.cpp.obj
 
 # target to build an object file
 src/utils/other.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/other.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/other.cpp.obj
 .PHONY : src/utils/other.cpp.obj
 
 src/utils/other.i: src/utils/other.cpp.i
@@ -357,7 +357,7 @@ src/utils/other.i: src/utils/other.cpp.i
 
 # target to preprocess a source file
 src/utils/other.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/other.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/other.cpp.i
 .PHONY : src/utils/other.cpp.i
 
 src/utils/other.s: src/utils/other.cpp.s
@@ -365,7 +365,7 @@ src/utils/other.s: src/utils/other.cpp.s
 
 # target to generate assembly for a file
 src/utils/other.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/other.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/other.cpp.s
 .PHONY : src/utils/other.cpp.s
 
 src/utils/validation.obj: src/utils/validation.cpp.obj
@@ -373,7 +373,7 @@ src/utils/validation.obj: src/utils/validation.cpp.obj
 
 # target to build an object file
 src/utils/validation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/validation.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/validation.cpp.obj
 .PHONY : src/utils/validation.cpp.obj
 
 src/utils/validation.i: src/utils/validation.cpp.i
@@ -381,7 +381,7 @@ src/utils/validation.i: src/utils/validation.cpp.i
 
 # target to preprocess a source file
 src/utils/validation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/validation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/validation.cpp.i
 .PHONY : src/utils/validation.cpp.i
 
 src/utils/validation.s: src/utils/validation.cpp.s
@@ -389,7 +389,7 @@ src/utils/validation.s: src/utils/validation.cpp.s
 
 # target to generate assembly for a file
 src/utils/validation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kuda.dir\build.make CMakeFiles/kuda.dir/src/utils/validation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/validation.cpp.s
 .PHONY : src/utils/validation.cpp.s
 
 # Help Target
@@ -400,7 +400,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... kuda
+	@echo ... growspace
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
