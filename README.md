@@ -1,7 +1,3 @@
-Here’s a suggested **README.md** for your **Growspace** application:
-
----
-
 ## Growspace
 
 Growspace is a command-line application for managing events and registrations. It supports two roles:

@@ -1,3 +1,0 @@
-D:/Kuliah/Strukdat/KOM120H-Growspace/build/CMakeFiles/CMakeScratch/TryCompile-v5154u/CMakeFiles/cmTC_ac703.dir
-D:/Kuliah/Strukdat/KOM120H-Growspace/build/CMakeFiles/CMakeScratch/TryCompile-v5154u/CMakeFiles/edit_cache.dir
-D:/Kuliah/Strukdat/KOM120H-Growspace/build/CMakeFiles/CMakeScratch/TryCompile-v5154u/CMakeFiles/rebuild_cache.dir

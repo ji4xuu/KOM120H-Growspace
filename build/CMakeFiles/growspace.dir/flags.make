@@ -4,7 +4,7 @@
 # compile CXX with C:/MinGW/bin/g++.exe
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = @CMakeFiles/growspace.dir/includes_CXX.rsp
 
-CXX_FLAGS =   -v
+CXX_FLAGS = -std=gnu++1z
 

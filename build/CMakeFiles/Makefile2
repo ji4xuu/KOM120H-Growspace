@@ -28,9 +28,6 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -56,20 +53,20 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles\CMakeScratch\TryCompile-v5154u
+CMAKE_SOURCE_DIR = D:\Kuliah\Strukdat\KOM120H-Growspace
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles\CMakeScratch\TryCompile-v5154u
+CMAKE_BINARY_DIR = D:\Kuliah\Strukdat\KOM120H-Growspace\build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/cmTC_ac703.dir/all
+all: CMakeFiles/growspace.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/cmTC_ac703.dir/codegen
+codegen: CMakeFiles/growspace.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -77,41 +74,48 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/cmTC_ac703.dir/clean
+clean: CMakeFiles/growspace.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cmTC_ac703.dir
+# Target rules for target CMakeFiles/growspace.dir
 
 # All Build rule for target.
-CMakeFiles/cmTC_ac703.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_ac703.dir\build.make CMakeFiles/cmTC_ac703.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_ac703.dir\build.make CMakeFiles/cmTC_ac703.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles\CMakeScratch\TryCompile-v5154u\CMakeFiles --progress-num=1,2 "Built target cmTC_ac703"
-.PHONY : CMakeFiles/cmTC_ac703.dir/all
+CMakeFiles/growspace.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target growspace"
+.PHONY : CMakeFiles/growspace.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cmTC_ac703.dir/rule:
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles\CMakeScratch\TryCompile-v5154u\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/cmTC_ac703.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles\CMakeScratch\TryCompile-v5154u\CMakeFiles 0
-.PHONY : CMakeFiles/cmTC_ac703.dir/rule
+CMakeFiles/growspace.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/growspace.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles 0
+.PHONY : CMakeFiles/growspace.dir/rule
 
 # Convenience name for target.
-cmTC_ac703: CMakeFiles/cmTC_ac703.dir/rule
-.PHONY : cmTC_ac703
+growspace: CMakeFiles/growspace.dir/rule
+.PHONY : growspace
 
 # codegen rule for target.
-CMakeFiles/cmTC_ac703.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_ac703.dir\build.make CMakeFiles/cmTC_ac703.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles\CMakeScratch\TryCompile-v5154u\CMakeFiles --progress-num=1,2 "Finished codegen for target cmTC_ac703"
-.PHONY : CMakeFiles/cmTC_ac703.dir/codegen
+CMakeFiles/growspace.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Finished codegen for target growspace"
+.PHONY : CMakeFiles/growspace.dir/codegen
 
 # clean rule for target.
-CMakeFiles/cmTC_ac703.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_ac703.dir\build.make CMakeFiles/cmTC_ac703.dir/clean
-.PHONY : CMakeFiles/cmTC_ac703.dir/clean
+CMakeFiles/growspace.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/clean
+.PHONY : CMakeFiles/growspace.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
+
+# Special rule to run CMake to check the build system integrity.
+# No rule that depends on this can have commands that come from listfiles
+# because they might be regenerated.
+cmake_check_build_system:
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+.PHONY : cmake_check_build_system
 
