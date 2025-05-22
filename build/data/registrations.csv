@@ -19,4 +19,3 @@ id,event_id,full_name,ttl,nik,email,password,status,payment_status,payment_accou
 18,3,Nadira Citra,2000-03-23,3276019606781279,nadira.citra@mail.com,nadira_citra,REJECTED,UNVERIFIED,5659210497,2025-05-17
 19,1,Galang Raka,2001-03-07,3276015541697069,galang.raka@mail.com,galang_raka,PENDING,UNVERIFIED,3190645241,2025-05-18
 20,3,Karina Melati,2000-03-14,3276016546617039,karina.melati@mail.com,karina_melati,REJECTED,UNVERIFIED,8605100176,2025-05-19
-
