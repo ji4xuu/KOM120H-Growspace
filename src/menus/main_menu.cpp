@@ -20,6 +20,7 @@ void showLogo(){
 int showMainMenu(){
     while (true){
         clearScreen();
+        std::cout<<"HI";
         showLogo();
         int pilihan;
         std::cout << std::string(60, '-') << " Menu Utama " << std::string(60, '-') << '\n';
