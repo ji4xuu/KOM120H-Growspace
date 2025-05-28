@@ -75,6 +75,7 @@ CMakeFiles/growspace.dir/main.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/main.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/main.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/main.cpp
 CMakeFiles/growspace.dir/main.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/growspace.dir/main.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/main.cpp.obj -MF CMakeFiles\growspace.dir\main.cpp.obj.d -o CMakeFiles\growspace.dir\main.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\main.cpp
 
@@ -85,11 +86,24 @@ CMakeFiles/growspace.dir/main.cpp.i: cmake_force
 CMakeFiles/growspace.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/main.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\main.cpp -o CMakeFiles\growspace.dir\main.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/growspace.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/main.cpp.obj -MF CMakeFiles\growspace.dir\main.cpp.obj.d -o CMakeFiles\growspace.dir\main.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\main.cpp
+
+CMakeFiles/growspace.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/main.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\main.cpp > CMakeFiles\growspace.dir\main.cpp.i
+
+CMakeFiles/growspace.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/main.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\main.cpp -o CMakeFiles\growspace.dir\main.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/menus/admin_menu.cpp
 CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.obj -MF CMakeFiles\growspace.dir\src\menus\admin_menu.cpp.obj.d -o CMakeFiles\growspace.dir\src\menus\admin_menu.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\menus\admin_menu.cpp
 
@@ -100,11 +114,24 @@ CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\menus\admin_menu.cpp -o CMakeFiles\growspace.dir\src\menus\admin_menu.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.obj -MF CMakeFiles\growspace.dir\src\menus\admin_menu.cpp.obj.d -o CMakeFiles\growspace.dir\src\menus\admin_menu.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\menus\admin_menu.cpp
+
+CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\menus\admin_menu.cpp > CMakeFiles\growspace.dir\src\menus\admin_menu.cpp.i
+
+CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/menus/admin_menu.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\menus\admin_menu.cpp -o CMakeFiles\growspace.dir\src\menus\admin_menu.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/menus/main_menu.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/menus/main_menu.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/menus/main_menu.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/menus/main_menu.cpp
 CMakeFiles/growspace.dir/src/menus/main_menu.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/growspace.dir/src/menus/main_menu.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/menus/main_menu.cpp.obj -MF CMakeFiles\growspace.dir\src\menus\main_menu.cpp.obj.d -o CMakeFiles\growspace.dir\src\menus\main_menu.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\menus\main_menu.cpp
 
@@ -115,11 +142,24 @@ CMakeFiles/growspace.dir/src/menus/main_menu.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/menus/main_menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/menus/main_menu.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\menus\main_menu.cpp -o CMakeFiles\growspace.dir\src\menus\main_menu.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/growspace.dir/src/menus/main_menu.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/menus/main_menu.cpp.obj -MF CMakeFiles\growspace.dir\src\menus\main_menu.cpp.obj.d -o CMakeFiles\growspace.dir\src\menus\main_menu.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\menus\main_menu.cpp
+
+CMakeFiles/growspace.dir/src/menus/main_menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/menus/main_menu.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\menus\main_menu.cpp > CMakeFiles\growspace.dir\src\menus\main_menu.cpp.i
+
+CMakeFiles/growspace.dir/src/menus/main_menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/menus/main_menu.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\menus\main_menu.cpp -o CMakeFiles\growspace.dir\src\menus\main_menu.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/menus/participant_menu.cpp
 CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.obj -MF CMakeFiles\growspace.dir\src\menus\participant_menu.cpp.obj.d -o CMakeFiles\growspace.dir\src\menus\participant_menu.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\menus\participant_menu.cpp
 
@@ -130,11 +170,24 @@ CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\menus\participant_menu.cpp -o CMakeFiles\growspace.dir\src\menus\participant_menu.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.obj -MF CMakeFiles\growspace.dir\src\menus\participant_menu.cpp.obj.d -o CMakeFiles\growspace.dir\src\menus\participant_menu.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\menus\participant_menu.cpp
+
+CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\menus\participant_menu.cpp > CMakeFiles\growspace.dir\src\menus\participant_menu.cpp.i
+
+CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/menus/participant_menu.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\menus\participant_menu.cpp -o CMakeFiles\growspace.dir\src\menus\participant_menu.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/services/admin_service.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/services/admin_service.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/services/admin_service.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/services/admin_service.cpp
 CMakeFiles/growspace.dir/src/services/admin_service.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/growspace.dir/src/services/admin_service.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/services/admin_service.cpp.obj -MF CMakeFiles\growspace.dir\src\services\admin_service.cpp.obj.d -o CMakeFiles\growspace.dir\src\services\admin_service.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\services\admin_service.cpp
 
@@ -145,11 +198,24 @@ CMakeFiles/growspace.dir/src/services/admin_service.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/services/admin_service.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/services/admin_service.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\services\admin_service.cpp -o CMakeFiles\growspace.dir\src\services\admin_service.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/growspace.dir/src/services/admin_service.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/services/admin_service.cpp.obj -MF CMakeFiles\growspace.dir\src\services\admin_service.cpp.obj.d -o CMakeFiles\growspace.dir\src\services\admin_service.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\services\admin_service.cpp
+
+CMakeFiles/growspace.dir/src/services/admin_service.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/services/admin_service.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\services\admin_service.cpp > CMakeFiles\growspace.dir\src\services\admin_service.cpp.i
+
+CMakeFiles/growspace.dir/src/services/admin_service.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/services/admin_service.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\services\admin_service.cpp -o CMakeFiles\growspace.dir\src\services\admin_service.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/services/auth_service.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/services/auth_service.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/services/auth_service.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/services/auth_service.cpp
 CMakeFiles/growspace.dir/src/services/auth_service.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/growspace.dir/src/services/auth_service.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/services/auth_service.cpp.obj -MF CMakeFiles\growspace.dir\src\services\auth_service.cpp.obj.d -o CMakeFiles\growspace.dir\src\services\auth_service.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\services\auth_service.cpp
 
@@ -160,11 +226,24 @@ CMakeFiles/growspace.dir/src/services/auth_service.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/services/auth_service.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/services/auth_service.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\services\auth_service.cpp -o CMakeFiles\growspace.dir\src\services\auth_service.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/growspace.dir/src/services/auth_service.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/services/auth_service.cpp.obj -MF CMakeFiles\growspace.dir\src\services\auth_service.cpp.obj.d -o CMakeFiles\growspace.dir\src\services\auth_service.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\services\auth_service.cpp
+
+CMakeFiles/growspace.dir/src/services/auth_service.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/services/auth_service.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\services\auth_service.cpp > CMakeFiles\growspace.dir\src\services\auth_service.cpp.i
+
+CMakeFiles/growspace.dir/src/services/auth_service.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/services/auth_service.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\services\auth_service.cpp -o CMakeFiles\growspace.dir\src\services\auth_service.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/services/participant_service.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/services/participant_service.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/services/participant_service.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/services/participant_service.cpp
 CMakeFiles/growspace.dir/src/services/participant_service.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/growspace.dir/src/services/participant_service.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/services/participant_service.cpp.obj -MF CMakeFiles\growspace.dir\src\services\participant_service.cpp.obj.d -o CMakeFiles\growspace.dir\src\services\participant_service.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\services\participant_service.cpp
 
@@ -175,11 +254,24 @@ CMakeFiles/growspace.dir/src/services/participant_service.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/services/participant_service.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/services/participant_service.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\services\participant_service.cpp -o CMakeFiles\growspace.dir\src\services\participant_service.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/growspace.dir/src/services/participant_service.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/services/participant_service.cpp.obj -MF CMakeFiles\growspace.dir\src\services\participant_service.cpp.obj.d -o CMakeFiles\growspace.dir\src\services\participant_service.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\services\participant_service.cpp
+
+CMakeFiles/growspace.dir/src/services/participant_service.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/services/participant_service.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\services\participant_service.cpp > CMakeFiles\growspace.dir\src\services\participant_service.cpp.i
+
+CMakeFiles/growspace.dir/src/services/participant_service.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/services/participant_service.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\services\participant_service.cpp -o CMakeFiles\growspace.dir\src\services\participant_service.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/utils/csv_loader.cpp
 CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.obj -MF CMakeFiles\growspace.dir\src\utils\csv_loader.cpp.obj.d -o CMakeFiles\growspace.dir\src\utils\csv_loader.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\utils\csv_loader.cpp
 
@@ -190,11 +282,24 @@ CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\utils\csv_loader.cpp -o CMakeFiles\growspace.dir\src\utils\csv_loader.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.obj -MF CMakeFiles\growspace.dir\src\utils\csv_loader.cpp.obj.d -o CMakeFiles\growspace.dir\src\utils\csv_loader.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\csv_loader.cpp
+
+CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\csv_loader.cpp > CMakeFiles\growspace.dir\src\utils\csv_loader.cpp.i
+
+CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/utils/csv_loader.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\csv_loader.cpp -o CMakeFiles\growspace.dir\src\utils\csv_loader.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/utils/hashing.cpp
 CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj -MF CMakeFiles\growspace.dir\src\utils\hashing.cpp.obj.d -o CMakeFiles\growspace.dir\src\utils\hashing.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\utils\hashing.cpp
 
@@ -205,11 +310,24 @@ CMakeFiles/growspace.dir/src/utils/hashing.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/utils/hashing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/utils/hashing.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\utils\hashing.cpp -o CMakeFiles\growspace.dir\src\utils\hashing.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj -MF CMakeFiles\growspace.dir\src\utils\hashing.cpp.obj.d -o CMakeFiles\growspace.dir\src\utils\hashing.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\hashing.cpp
+
+CMakeFiles/growspace.dir/src/utils/hashing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/utils/hashing.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\hashing.cpp > CMakeFiles\growspace.dir\src\utils\hashing.cpp.i
+
+CMakeFiles/growspace.dir/src/utils/hashing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/utils/hashing.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\hashing.cpp -o CMakeFiles\growspace.dir\src\utils\hashing.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/utils/other.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/utils/other.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/utils/other.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/utils/other.cpp
 CMakeFiles/growspace.dir/src/utils/other.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/growspace.dir/src/utils/other.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/utils/other.cpp.obj -MF CMakeFiles\growspace.dir\src\utils\other.cpp.obj.d -o CMakeFiles\growspace.dir\src\utils\other.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\utils\other.cpp
 
@@ -220,11 +338,24 @@ CMakeFiles/growspace.dir/src/utils/other.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/utils/other.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/utils/other.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\utils\other.cpp -o CMakeFiles\growspace.dir\src\utils\other.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/growspace.dir/src/utils/other.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/utils/other.cpp.obj -MF CMakeFiles\growspace.dir\src\utils\other.cpp.obj.d -o CMakeFiles\growspace.dir\src\utils\other.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\other.cpp
+
+CMakeFiles/growspace.dir/src/utils/other.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/utils/other.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\other.cpp > CMakeFiles\growspace.dir\src\utils\other.cpp.i
+
+CMakeFiles/growspace.dir/src/utils/other.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/utils/other.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\other.cpp -o CMakeFiles\growspace.dir\src\utils\other.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 CMakeFiles/growspace.dir/src/utils/validation.cpp.obj: CMakeFiles/growspace.dir/flags.make
 CMakeFiles/growspace.dir/src/utils/validation.cpp.obj: CMakeFiles/growspace.dir/includes_CXX.rsp
 CMakeFiles/growspace.dir/src/utils/validation.cpp.obj: C:/Users/Kasy/Documents/KOM120H-Growspace/src/utils/validation.cpp
 CMakeFiles/growspace.dir/src/utils/validation.cpp.obj: CMakeFiles/growspace.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/growspace.dir/src/utils/validation.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/utils/validation.cpp.obj -MF CMakeFiles\growspace.dir\src\utils\validation.cpp.obj.d -o CMakeFiles\growspace.dir\src\utils\validation.cpp.obj -c C:\Users\Kasy\Documents\KOM120H-Growspace\src\utils\validation.cpp
 
@@ -235,6 +366,18 @@ CMakeFiles/growspace.dir/src/utils/validation.cpp.i: cmake_force
 CMakeFiles/growspace.dir/src/utils/validation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/utils/validation.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kasy\Documents\KOM120H-Growspace\src\utils\validation.cpp -o CMakeFiles\growspace.dir\src\utils\validation.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Kuliah\Strukdat\KOM120H-Growspace\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/growspace.dir/src/utils/validation.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/growspace.dir/src/utils/validation.cpp.obj -MF CMakeFiles\growspace.dir\src\utils\validation.cpp.obj.d -o CMakeFiles\growspace.dir\src\utils\validation.cpp.obj -c D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\validation.cpp
+
+CMakeFiles/growspace.dir/src/utils/validation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/growspace.dir/src/utils/validation.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\validation.cpp > CMakeFiles\growspace.dir\src\utils\validation.cpp.i
+
+CMakeFiles/growspace.dir/src/utils/validation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/growspace.dir/src/utils/validation.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Kuliah\Strukdat\KOM120H-Growspace\src\utils\validation.cpp -o CMakeFiles\growspace.dir\src\utils\validation.cpp.s
+>>>>>>> parent of 09f04a6 (yey)
 
 # Object files for target growspace
 growspace_OBJECTS = \
