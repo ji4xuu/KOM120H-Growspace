@@ -19,8 +19,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/growspace.dir/src/utils/hashing.cpp.obj.d"
   "CMakeFiles/growspace.dir/src/utils/other.cpp.obj"
   "CMakeFiles/growspace.dir/src/utils/other.cpp.obj.d"
-  "CMakeFiles/growspace.dir/src/utils/validation.cpp.obj"
-  "CMakeFiles/growspace.dir/src/utils/validation.cpp.obj.d"
   "growspace.exe"
   "growspace.exe.manifest"
   "growspace.pdb"

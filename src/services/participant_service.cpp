@@ -3,17 +3,16 @@
 
 ParticipantService::ParticipantService(std::vector<Event>& events, std::vector<Registration>& registrations, Queue<Registration>& verifQueue) : 
 _events(events), _registrations(registrations), _verifQueue(verifQueue)
-{}
+{
+    buildIndexes();
+}
 
-Event ParticipantService::findEventId(int eventId) const {
-    for (const auto& ev : _events) {
-        if (ev.id == eventId)
-            return ev;
+Event* ParticipantService::findEventById(int eventId) const {
+    auto it = _eventIndex.find(eventId);
+    if (it != _eventIndex.end()) {
+        return it->second; // Kembalikan pointer ke event yang ditemukan
     }
-    // default-constructed Event sebagai “not found”
-    Event none{};
-    none.id = -1;
-    return none;
+    return nullptr; // Kembalikan nullptr jika tidak ditemukan
 }
 
 int ParticipantService::hitungSisaKuota(const Event& ev) const{
@@ -61,21 +60,24 @@ void ParticipantService::showEvents(const std::vector<Event> &events, const std:
                   << std::setw(11) << kuotaInfo << '\n';
     }
 }
+
 Registration* ParticipantService::getMyRegistrationStatus(int registrationId) {
-    for (auto& regs : _registrations) {
-        if (regs.id == registrationId)
-            return &regs; // return pointer ke elemen asli
+    auto it = _registrationIndex.find(registrationId);
+    if (it != _registrationIndex.end()) {
+        return it->second; // Kembalikan pointer ke registrasi yang ditemukan
     }
-    return nullptr; // tidak ditemukan
+    return nullptr;
 }
 
 std::vector<Event> ParticipantService::listEvents(const std::string& keyword, const std::string& sortBy, bool ascending) const{
     std::vector<Event> result;
 
     for (const auto& ev : _events){
-        if (keyword == "-" || ev.title.find(keyword) != std::string::npos || ev.description.find(keyword) != std::string::npos || 
-        ev.start_date.find(keyword) != std::string::npos || ev.end_date.find(keyword) != std::string::npos){
-            result.push_back(ev);
+        if (ev.status == AKTIF || ev.status == SELESAI) { 
+            if (keyword == "-" || ev.title.find(keyword) != std::string::npos || ev.description.find(keyword) != std::string::npos || 
+            ev.start_date.find(keyword) != std::string::npos || ev.end_date.find(keyword) != std::string::npos){
+                result.push_back(ev);
+            }
         }
     }
     auto comparator = [&](const Event& a, const Event& b) {
@@ -95,12 +97,18 @@ std::vector<Event> ParticipantService::listEvents(const std::string& keyword, co
 }
 
 bool ParticipantService::registerToEvent(int eventId){
-    Event ev = findEventId(eventId);
-    if(ev.id == -1){
+    Event* ev = findEventById(eventId);
+    if(ev == nullptr){ 
         std::cout << "Event tidak ditemukan." << '\n';
         return true;
     }
-    int sisa_kuota = hitungSisaKuota(ev);
+
+    if (ev->status != AKTIF) {
+        std::cout << "Event ini tidak aktif dan tidak bisa didaftar.\n";
+        return true; // Gagal, event tidak aktif
+    }
+
+    int sisa_kuota = hitungSisaKuota(*ev);
     if(sisa_kuota <= 0){
         std::cout << "Kuota penuh." << '\n';
         return true;
@@ -109,6 +117,7 @@ bool ParticipantService::registerToEvent(int eventId){
 
     Registration r;
 
+    int iter = 1;
     do {
         clearScreen();
         std::cout << "Masukkan informasi berikut untuk menyelesaikan pendaftaran." << '\n';
@@ -149,7 +158,7 @@ bool ParticipantService::registerToEvent(int eventId){
             Sleep(1000);
             continue;
         }
-        if (ev.is_paid) {
+        if (ev->is_paid) {
             std::cout << "No. Rekening/VA             : ";
             std::getline(std::cin, payment_acc);
             if (payment_acc.empty()){
@@ -163,14 +172,13 @@ bool ParticipantService::registerToEvent(int eventId){
             r.payment_status  = VERIFIED;
         }
         r.payment_account = payment_acc;
-    } while (full_name.empty() || ttl.empty() || nik.size() != 16 || !std::all_of(nik.begin(), nik.end(), ::isdigit) ||
-    email.find('@') == std::string::npos || email.rfind('.') == std::string::npos || email.rfind('.') < email.find('@')||
-    password.length() < 8 || payment_acc.empty());
+        iter = 0;
+    } while (iter);
 
 
     r.id            = static_cast<int>(_registrations.size()) + 1;
     r.event_id      = eventId;
-    r.status        = ev.is_paid
+    r.status        = ev->is_paid
                       ? PENDING
                       : APPROVED;
     r.created_at = getCurrentDate();
@@ -181,12 +189,16 @@ bool ParticipantService::registerToEvent(int eventId){
     r.password_hash   = password;
 
     _registrations.push_back(r);
-    if (ev.is_paid) {
+    buildIndexes();
+    if (ev->is_paid) {
         _verifQueue.enqueue(r);
     }
+
     Registration* reg = getMyRegistrationStatus(r.id);
+    pause();
     clearScreen();
     std::cout << "Pendaftaran berhasil.\n";
+
     std::string status_str;
     switch (reg->status) {
         case PENDING: status_str = "Pending"; break;
@@ -195,12 +207,16 @@ bool ParticipantService::registerToEvent(int eventId){
         case CANCELLED: status_str = "Cancelled"; break;
     }
 
+    std::cout << "OKE-OKE" << '\n';
+
     std::string payment_str;
     switch (reg->payment_status) {
         case VERIFIED: payment_str = "Verified"; break;
         case UNVERIFIED: payment_str = "Unverified"; break;
         case FAILED: payment_str = "Failed"; break;
     }
+
+    std::cout << "OKE-OKE" << '\n';
 
     constexpr int LBL_W = 18;  
     std::cout << "=== Detail Status Registrasi ===\n\n";
@@ -260,4 +276,19 @@ void ParticipantService::getEventDetail(const Event &ev) const {
               << ": " << ev.type << "\n";
     std::cout << std::left << std::setw(LABEL_WIDTH) << "Kuota"
               << ": " << sisa << "/" << ev.quota << "\n\n";
+}
+
+void ParticipantService::buildIndexes() {
+    // Hapus isi map sebelumnya untuk memastikan kebersihan data
+    _eventIndex.clear();
+    _registrationIndex.clear();
+
+    // Bangun indeks untuk Events
+    for (auto& event : _events) {
+        _eventIndex[event.id] = &event; // Simpan pointer, bukan salinan
+    }
+    // Bangun indeks untuk Registrations
+    for (auto& reg : _registrations) {
+        _registrationIndex[reg.id] = &reg;
+    }
 }

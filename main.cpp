@@ -19,17 +19,22 @@ int main() {
         }
     }
 
-    ParticipantService svc(events, registrations, verifQueue);
+    ParticipantService participantSvc(events, registrations, verifQueue);
+    AdminService adminSvc(events, registrations, verifQueue);
     while(true){
         int pilihan = showMainMenu();
         switch (pilihan){
             case 1: {
                 int back;
-                back = runParticipantMenu(svc);
+                back = runParticipantMenu(participantSvc);
                 writeRegistrationToCSV(registrations, "data/registrations.csv");
                 break;
             }
             case 2: {
+                runAdminMenu(adminSvc);
+                // Data disimpan setelah sesi admin selesai
+                writeEventToCSV(events, "data/events.csv");
+                writeRegistrationToCSV(registrations, "data/registrations.csv");
                 break;
             }
             case 0: {

@@ -1,3 +1,3 @@
-C:/Users/Kasy/Documents/KOM120H-Growspace/build/CMakeFiles/growspace.dir
-C:/Users/Kasy/Documents/KOM120H-Growspace/build/CMakeFiles/edit_cache.dir
-C:/Users/Kasy/Documents/KOM120H-Growspace/build/CMakeFiles/rebuild_cache.dir
+D:/Kuliah/Proyek/KOM120H-Growspace/build/CMakeFiles/growspace.dir
+D:/Kuliah/Proyek/KOM120H-Growspace/build/CMakeFiles/edit_cache.dir
+D:/Kuliah/Proyek/KOM120H-Growspace/build/CMakeFiles/rebuild_cache.dir

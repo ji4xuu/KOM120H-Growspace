@@ -32,7 +32,7 @@ std::vector<Event> readEventFromCSV(const std::string& filename) {
         while (std::getline(file, line)) {
             std::stringstream ss(line);
             Event event;
-            std::string event_status;
+            std::string eventstatus_str;
             std::string id_str;
             std::string quota_str;
             std::getline(ss, id_str, ',');
@@ -50,6 +50,11 @@ std::vector<Event> readEventFromCSV(const std::string& filename) {
             event.is_paid = (is_paid == "true");
             std::getline(ss, event.type, ',');
             std::getline(ss, event.created_at, ',');
+
+            std::getline(ss, eventstatus_str, ',');
+            if (eventstatus_str == "BATAL") event.status = BATAL;
+            else if (eventstatus_str == "SELESAI") event.status = SELESAI;
+            else event.status = AKTIF;
             events.push_back(event);
         }
         file.close();
@@ -117,8 +122,15 @@ void writeUserToCSV(const std::vector<User>& users, const std::string& filename)
 void writeEventToCSV(const std::vector<Event>& events, const std::string& filename) {
     std::ofstream file(filename);
     if (file.is_open()) {
-        file << "id,title,description,start_date,end_date,registration_start,registration_end,quota,is_paid,type,created_at\n";  // Header CSV
+        file << "id,title,description,start_date,end_date,registration_start,registration_end,quota,is_paid,type,created_at,status\n";  // Header CSV
         for (const auto& event : events) {
+            std::string status_str;
+            switch (event.status) {
+                case BATAL: status_str = "BATAL"; break;
+                case SELESAI: status_str = "SELESAI"; break;
+                default: status_str = "AKTIF"; break;
+            }
+
             file << event.id << ","
                  << event.title << ","
                  << event.description << ","
@@ -129,7 +141,8 @@ void writeEventToCSV(const std::vector<Event>& events, const std::string& filena
                  << event.quota << ","
                  << (event.is_paid ? "true" : "false") << ","
                  << event.type << ","
-                 << event.created_at << "\n";
+                 << event.created_at << ","
+                 << status_str << "\n";
         }
         file.close();
     } else {

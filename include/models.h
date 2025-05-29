@@ -24,6 +24,12 @@ enum class ActionType {
     VERIFY_REGISTRATION
 };
 
+enum EventStatus {
+    AKTIF,
+    BATAL,
+    SELESAI
+};
+
 struct User {
     int id;
     std::string username;
@@ -42,6 +48,7 @@ struct Event {
     bool is_paid;
     std::string type;
     std::string created_at;
+    EventStatus status;
 };
 
 struct Registration {

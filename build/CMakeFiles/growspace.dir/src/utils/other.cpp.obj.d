@@ -1,6 +1,6 @@
 CMakeFiles/growspace.dir/src/utils/other.cpp.obj: \
- C:\Users\Kasy\Documents\KOM120H-Growspace\src\utils\other.cpp \
- C:/Users/Kasy/Documents/KOM120H-Growspace/include/utils/other.h \
+ D:\Kuliah\Proyek\KOM120H-Growspace\src\utils\other.cpp \
+ D:/Kuliah/Proyek/KOM120H-Growspace/include/utils/other.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ctime \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++config.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\os_defines.h \

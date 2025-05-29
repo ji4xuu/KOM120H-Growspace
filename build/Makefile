@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Kasy\Documents\KOM120H-Growspace
+CMAKE_SOURCE_DIR = D:\Kuliah\Proyek\KOM120H-Growspace
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Kasy\Documents\KOM120H-Growspace\build
+CMAKE_BINARY_DIR = D:\Kuliah\Proyek\KOM120H-Growspace\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles C:\Users\Kasy\Documents\KOM120H-Growspace\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Proyek\KOM120H-Growspace\build\CMakeFiles D:\Kuliah\Proyek\KOM120H-Growspace\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kasy\Documents\KOM120H-Growspace\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Kuliah\Proyek\KOM120H-Growspace\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -368,30 +368,6 @@ src/utils/other.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/other.cpp.s
 .PHONY : src/utils/other.cpp.s
 
-src/utils/validation.obj: src/utils/validation.cpp.obj
-.PHONY : src/utils/validation.obj
-
-# target to build an object file
-src/utils/validation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/validation.cpp.obj
-.PHONY : src/utils/validation.cpp.obj
-
-src/utils/validation.i: src/utils/validation.cpp.i
-.PHONY : src/utils/validation.i
-
-# target to preprocess a source file
-src/utils/validation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/validation.cpp.i
-.PHONY : src/utils/validation.cpp.i
-
-src/utils/validation.s: src/utils/validation.cpp.s
-.PHONY : src/utils/validation.s
-
-# target to generate assembly for a file
-src/utils/validation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\growspace.dir\build.make CMakeFiles/growspace.dir/src/utils/validation.cpp.s
-.PHONY : src/utils/validation.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -431,9 +407,6 @@ help:
 	@echo ... src/utils/other.obj
 	@echo ... src/utils/other.i
 	@echo ... src/utils/other.s
-	@echo ... src/utils/validation.obj
-	@echo ... src/utils/validation.i
-	@echo ... src/utils/validation.s
 .PHONY : help
 
 

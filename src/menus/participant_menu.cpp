@@ -79,10 +79,13 @@ static void handleListEvents(ParticipantService& svc)
                 int eventid;
                 std::cout << "Masukkan event id : ";
                 std::cin >> eventid;
-                Event event = svc.findEventId(eventid);
-                std::cout << "\nBerikut detail Event dengan id : " << eventid << '\n';
-                svc.getEventDetail(event);
-                
+                Event* event = svc.findEventById(eventid);
+                if (event != nullptr) { 
+                    std::cout << "\nBerikut detail Event dengan id : " << eventid << '\n';
+                    svc.getEventDetail(*event); 
+                } else {
+                    std::cout << "Event dengan ID " << eventid << " tidak ditemukan.\n";
+                }
             }
             else if(pilihan == 0){
                 std::cout << "Kembali ke Dashboard Peserta..." << '\n';
@@ -115,18 +118,18 @@ static void handleRegister(ParticipantService& svc)
     }
 
     // Cari event berdasarkan ID
-    const Event event = svc.findEventId(eventId);
-    if (event.id == -1) {
+    const Event* event = svc.findEventById(eventId);
+    if (event == nullptr) {
         std::cout << "Event dengan ID " << eventId << " tidak ditemukan.\n";
         return;
     }
 
     // Tampilkan informasi event
     std::cout << "\nInformasi Event:\n";
-    svc.getEventDetail(event);
+    svc.getEventDetail(*event);
 
     // Periksa kuota
-    if (event.quota <= 0) {
+    if (event->quota <= 0) {
         std::cout << "Maaf, kuota untuk event ini telah habis.\n";
         return;
     }

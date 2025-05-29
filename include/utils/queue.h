@@ -1,40 +1,79 @@
+
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include<vector>
-#include<stdexcept>
+#include <stdexcept>
 
 template <typename T>
-class Queue{
-    private:
-        std::vector<T> elements;
-    
-    public:
-        void enqueue(const T& item){
-            elements.push_back(item);
-        }
+class Queue {
+private:
+    // 1. Definisikan `Node` sebagai building block dari Linked List
+    struct Node {
+        T data;
+        Node* next;
+        Node(const T& item) : data(item), next(nullptr) {}
+    };
 
-        void dequeue(){
-            if (isEmpty()) {
-                throw std::runtime_error("Antrian kosong");
-            }
-            elements.erase(elements.begin()); // hapus elemen paling depan
-        }
+    // 2. Gunakan pointer head & tail, bukan vector
+    Node* head;
+    Node* tail;
+    size_t current_size;
 
-        T front() const {
-            if(isEmpty()){
-                throw std::runtime_error("Antrian kosong");
-            }
-            return elements[0];
-        }
+public:
+    // Constructor: Inisialisasi antrean kosong
+    Queue() : head(nullptr), tail(nullptr), current_size(0) {}
 
-        bool isEmpty() const {
-            return elements.empty();
+    // Destructor: Pastikan tidak ada memory leak
+    ~Queue() {
+        while (!isEmpty()) {
+            dequeue();
         }
+    }
 
-        size_t size() const {
-            return elements.size();
+    // 3. Implementasi enqueue (menambah di akhir) - O(1)
+    void enqueue(const T& item) {
+        Node* newNode = new Node(item);
+        if (isEmpty()) {
+            head = tail = newNode;
+        } else {
+            tail->next = newNode;
+            tail = newNode;
         }
+        current_size++;
+    }
+
+    // 4. Implementasi dequeue (menghapus di awal) - O(1)
+    void dequeue() {
+        if (isEmpty()) {
+            throw std::runtime_error("Antrean kosong");
+        }
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        current_size--;
+
+        if (isEmpty()) {
+            tail = nullptr;
+        }
+    }
+
+    // Mengambil data paling depan
+    T front() const {
+        if (isEmpty()) {
+            throw std::runtime_error("Antrean kosong");
+        }
+        return head->data;
+    }
+
+    // Cek apakah antrean kosong
+    bool isEmpty() const {
+        return head == nullptr;
+    }
+
+    // Mengambil ukuran antrean
+    size_t size() const {
+        return current_size;
+    }
 };
 
 #endif // QUEUE_H
