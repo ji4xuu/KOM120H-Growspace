@@ -116,7 +116,7 @@ Note on Data Files: The application, when run from the build directory, will typ
 
 The application will display the main menu where users can choose to proceed as a Participant or log in as an Administrator.
  
----
+```
 
 ## Project Structure
 
