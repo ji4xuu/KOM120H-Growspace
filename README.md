@@ -46,8 +46,8 @@ Before building and running Growspace, ensure you have the following installed:
 
 1.  **Clone the Repository (if applicable):**
     ```bash
-    git clone [https://github.com/](https://github.com/)[YOUR_USERNAME]/[YOUR_REPOSITORY_NAME].git
-    cd [YOUR_REPOSITORY_NAME]
+    git clone [https://github.com/](https://github.com/)[ji4xuu]/[KOM120H-Growspace].git
+    cd [KOM120H-Growspace]
     ```
 
 2.  **Prepare Data Folder:**
@@ -56,10 +56,12 @@ Before building and running Growspace, ensure you have the following installed:
     * `data/registrations.csv`
     * `data/users.csv` (contains admin login data with hashed passwords)
 
-3.  **Build Process with CMake:**
+3.  **Build Process**
 
-    * **Automated with a Script (Example for Linux/macOS):**
-        If you provide a build script (e.g., `setup.sh` or `build.bat` for Windows).
+    ### Option 1: Using CMake (Recommended)
+
+    - **Automated Script (Linux/macOS example):**
+        If you provide a build script (e.g., `setup.sh` or `build.bat` for Windows), you can automate the build process.
         Example `setup.sh`:
         ```bash
         #!/bin/bash
@@ -72,11 +74,11 @@ Before building and running Growspace, ensure you have the following installed:
         make
         echo "Build finished. Executable is in the build directory."
         ```
-        Make it executable: `chmod +x setup.sh` and run `./setup.sh`.
+        Make it executable: `chmod +x setup.sh` and run with `./setup.sh`.
 
-    * **Manual Build Steps:**
+    - **Manual CMake Build Steps:**
         ```bash
-        mkdir -p build  # Create build directory if it doesn't exist
+        mkdir -p build
         cd build
         ```
         **For Windows with MinGW:**
@@ -88,35 +90,40 @@ Before building and running Growspace, ensure you have the following installed:
         ```bash
         cmake ..
         make
-        # Alternatively, after 'cmake ..':
+        # Or, after 'cmake ..':
         # cmake --build .
         ```
         The executable `growspace` (or `growspace.exe`) will be generated in the `build/` directory.
+
+    ### Option 2: Manual Build with g++ (Advanced/Alternative)
+
+    If you do not wish to use CMake, you can compile manually with g++.  
+    **Note:** On Windows, use PowerShell for wildcard expansion, or list all `.cpp` files explicitly.
+
+    ```sh
+    g++ -std=c++17 -O2 -Iinclude -Iinclude/menus -Iinclude/services -Iinclude/utils -o growspace.exe main.cpp src/menus/*.cpp src/services/*.cpp src/utils/*.cpp
+    ```
+
+    - On Linux/macOS, use `/` instead of `\` for paths.
+    - If you get errors about missing headers, make sure all `-I` include paths are correct.
+
+---
 
 ## Running the Application
 
 After a successful build, run the application from within the `build/` directory:
 
-```bash
-./growspace      # For Linux/macOS
-# or
-.\growspace.exe  # For Windows (PowerShell)
-# or
-growspace.exe    # For Windows (Command Prompt)
-
-## Usage
-
-From the `build/` directory:
-
-```bash
-./growspace       # Linux/macOS
-growspace.exe     # Windows (MinGW)
-
-Note on Data Files: The application, when run from the build directory, will typically look for the data folder in the parent directory (i.e., ../data/). If you encounter issues with file loading, ensure your CSV reading functions in csv_loader.cpp use paths relative to the executable's expected working directory, or copy the data folder into your build directory. A common approach is ../data/filename.csv.
-
-The application will display the main menu where users can choose to proceed as a Participant or log in as an Administrator.
- 
+```sh
+./growspace        # For Linux/macOS
+.\growspace.exe    # For Windows (PowerShell)
+growspace.exe      # For Windows (Command Prompt)
 ```
+
+### Usage Notes
+
+- The application expects the `data/` folder (with CSV files) to be in the **parent directory** of your build folder (i.e., `../data/`).  
+  If you encounter issues with file loading, ensure your CSV reading functions use paths relative to the executable's working directory, or copy the `data` folder into your `build` directory.
+- The main menu will appear, allowing you to proceed as a Participant or log in as an Administrator.
 
 ## Project Structure
 
