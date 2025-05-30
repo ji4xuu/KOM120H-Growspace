@@ -1,4 +1,0 @@
-id,username,password_hash
-1,admin1,$2y$10$abcdefg123456admin1
-2,admin2,$2y$10$abcdefg123456admin2
-3,admin3,$2y$10$abcdefg654321admin3
