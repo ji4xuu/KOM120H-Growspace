@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm> // Diperlukan untuk std::find_if
 #include <sstream>   // Diperlukan untuk serialize/deserialize
+#include <other.h>
 
 AdminService::AdminService(
     std::vector<Event>& events, std::vector<Registration>& registrations, Queue<Registration>& verifQueue)
@@ -27,10 +28,26 @@ void AdminService::viewVerificationQueue() const {
         std::cout << "\nTidak ada pendaftaran yang perlu diverifikasi.\n";
         return;
     }
+
     std::cout << "\nAda " << _verifQueue.size() << " pendaftaran dalam antrean.\n";
     Registration frontReg = _verifQueue.front();
-    std::cout << "Pendaftar berikutnya untuk diverifikasi -> ID Registrasi: " << frontReg.id 
-              << ", Nama: " << frontReg.full_name << ", Event ID: " << frontReg.event_id << std::endl;
+    std::cout << std::string(35, ' ') << std::string(61, '=') << '\n';
+    std::cout << std::string(45, ' ') << " Pendaftar Berikutnya Untuk Diverifikasi \n";
+    std::cout << std::string(35, ' ') << std::string(61, '=') << '\n';
+    
+    // Menggunakan std::left dan std::setw untuk merapikan tampilan
+    const int labelWidth = 18; // Lebar untuk kolom label
+    
+    std::cout << std::string(44, ' ') << std::left << std::setw(labelWidth) << "ID Registrasi" << ": " << frontReg.id << std::endl;
+    std::cout << std::string(44, ' ') << std::left << std::setw(labelWidth) << "Nama Lengkap" << ": " << frontReg.full_name << std::endl;
+    std::cout << std::string(44, ' ') << std::left << std::setw(labelWidth) << "Email" << ": " << frontReg.email << std::endl;
+    std::cout << std::string(44, ' ') << std::left << std::setw(labelWidth) << "Event ID" << ": " << frontReg.event_id << std::endl;
+    std::cout << std::string(44, ' ') << std::left << std::setw(labelWidth) << "NIK" << ": " << frontReg.nik << std::endl;
+    std::cout << std::string(44, ' ') << std::left << std::setw(labelWidth) << "Akun Pembayaran" << ": " << frontReg.payment_account << std::endl;
+    std::cout << std::string(35, ' ') << std::string(61, '=') << '\n';
+
+    
+
 }
 
 bool AdminService::processNextRegistration(bool approve) {
@@ -66,22 +83,38 @@ bool AdminService::processNextRegistration(bool approve) {
     return true;
 }
 
-bool AdminService::createEvent(const std::string& title, const std::string& desc, const std::string& startDate, int quota) {
+bool AdminService::createEvent(
+    const std::string& title, 
+    const std::string& description, 
+    const std::string& start_date, 
+    const std::string& end_date,
+    const std::string& registration_start,
+    const std::string& registration_end,
+    int quota,
+    bool is_paid,
+    const std::string& type
+) {
     Event newEvent;
-    newEvent.id = _events.empty() ? 1 : _events.back().id + 1; // Membuat ID unik (cara sederhana)
+    newEvent.id = _events.empty() ? 1 : _events.back().id + 1;
     newEvent.title = title;
-    newEvent.description = desc;
-    newEvent.start_date = startDate;
+    newEvent.description = description;
+    newEvent.start_date = start_date;
+    newEvent.end_date = end_date; // Field baru
+    newEvent.registration_start = registration_start; // Field baru
+    newEvent.registration_end = registration_end; // Field baru
     newEvent.quota = quota;
-    newEvent.status = AKTIF; // Event baru selalu aktif
+    newEvent.is_paid = is_paid; // Field baru
+    newEvent.type = type; // Field baru
+
+    newEvent.created_at = getCurrentDate(); // Asumsi Anda punya fungsi ini di utils/other.h
+    newEvent.status = AKTIF; // Default untuk event baru
 
     _events.push_back(newEvent);
-    buildAdminIndexes();
+    buildAdminIndexes(); // Penting untuk sinkronisasi
 
-    // --- Implementasi Undo (Stack) ---
-    UndoRecord undo(ActionType::CREATE_EVENT, newEvent.id, ""); // Undo untuk create hanya perlu ID
+    // Implementasi Undo (Stack)
+    UndoRecord undo(ActionType::CREATE_EVENT, newEvent.id, "");
     _actionStack.push(undo);
-    // ---------------------------------
 
     std::cout << "\n[BERHASIL] Event baru '" << title << "' dengan ID " << newEvent.id << " telah dibuat.\n";
     return true;
@@ -124,6 +157,7 @@ bool AdminService::deleteEvent(int eventId) {
     return true;
 }
 
+/*
 bool AdminService::updateEvent(int eventId, const std::string& newTitle, const std::string& newDesc, int newQuota) {
     Event* eventToUpdate = findEventById(eventId);
 
@@ -152,6 +186,8 @@ bool AdminService::updateEvent(int eventId, const std::string& newTitle, const s
     return true;
 }
 
+*/
+
 bool AdminService::undoLastAction() {
     if (_actionStack.isEmpty()) {
         std::cout << "\nTidak ada aksi yang bisa di-undo.\n";
@@ -172,6 +208,13 @@ bool AdminService::undoLastAction() {
                 reg->status = static_cast<RegistStatus>(std::stoi(reg_status_str));
                 reg->payment_status = static_cast<PaymentStatus>(std::stoi(pay_status_str));
                 std::cout << "\n[UNDO] Verifikasi pada registrasi ID " << lastAction.target_id << " dibatalkan.\n";
+                if (reg->status == PENDING) {  
+                    _verifQueue.enqueueFront(*reg); 
+                    std::cout << "Registrasi ID " << reg->id << " dimasukkan kembali ke DEPAN antrean verifikasi.\n";
+                }
+
+            } else {
+                 std::cout << "\n[GAGAL UNDO] Registrasi ID " << lastAction.target_id << " tidak ditemukan.\n";
             }
             break;
         }
@@ -192,6 +235,7 @@ bool AdminService::undoLastAction() {
             std::cout << "\n[UNDO] Penghapusan event ID " << lastAction.target_id << " dibatalkan.\n";
             break;
         }
+        /*
         case ActionType::EDIT_EVENT: {
             Event* eventToRestore = findEventById(lastAction.target_id);
             if (eventToRestore) {
@@ -205,6 +249,7 @@ bool AdminService::undoLastAction() {
             }
             break;
         }
+        */
         default:
              std::cout << "\n[GAGAL] Tipe aksi undo tidak dikenali.\n";
              break;
@@ -215,7 +260,7 @@ bool AdminService::undoLastAction() {
 void AdminService::listAllEventsForAdmin() const {
      // Mungkin clear screen di sini atau di menu
     // showLogo(); // Jika perlu
-    std::cout << "\n--- Daftar Semua Event (Admin View) ---\n";
+    std::cout << std::string(20, ' ') << std::string(29, '-') << " Daftar Semua Event (Admin View) " << std::string(29, '-')  << '\n';
     if (_events.empty()) {
         std::cout << "Tidak ada event yang tersedia.\n";
         return;
@@ -228,7 +273,7 @@ void AdminService::listAllEventsForAdmin() const {
               << std::setw(26) << "Pelaksanaan"
               << std::setw(10) << "Berbayar"
               << std::setw(15) << "Tipe"
-              << std::setw(11) << "Sisa" << '\n';
+              << std::setw(11) << "Kuota" << '\n';
 
     std::cout << std::string(132, '-') << '\n';
 
@@ -256,11 +301,43 @@ std::string AdminService::peekLastActionDescription() const {
     std::string desc = "Aksi terakhir yang akan dibatalkan: ";
 
     switch (lastAction.action) {
-        case ActionType::VERIFY_REGISTRATION:
+        case ActionType::VERIFY_REGISTRATION: {
+            std::stringstream ss(lastAction.pre_state);
+            std::string reg_status_num_str, pay_status_num_str;
+            std::string reg_status_text, pay_status_text;
             desc += "VERIFIKASI REGISTRASI\n";
-            desc += "  Detail: Registrasi ID " + std::to_string(lastAction.target_id) + 
-                    " (status lama akan dikembalikan dari: " + lastAction.pre_state + ")";
+            desc += "  Detail: Registrasi ID " + std::to_string(lastAction.target_id);
+
+
+            if (std::getline(ss, reg_status_num_str, ',') && std::getline(ss, pay_status_num_str, ',')) {
+                try {
+                    RegistStatus oldRegStatus = static_cast<RegistStatus>(std::stoi(reg_status_num_str));
+                    PaymentStatus oldPayStatus = static_cast<PaymentStatus>(std::stoi(pay_status_num_str));
+
+                    switch (oldRegStatus) {
+                        case PENDING: reg_status_text = "PENDING"; break;
+                        case APPROVED: reg_status_text = "APPROVED"; break;
+                        case REJECTED: reg_status_text = "REJECTED"; break;
+                        default: reg_status_text = "CANCELLED"; break;
+                    }
+                    switch (oldPayStatus) {
+                        case UNVERIFIED: pay_status_text = "UNVERIFIED"; break;
+                        case VERIFIED: pay_status_text = "VERIFIED"; break;
+                        default: pay_status_text = "FAILED"; break;
+                    }
+                    desc += " akan dikembalikan ke status:\n";
+                    desc += "    Status Pendaftaran: " + reg_status_text + "\n";
+                    desc += "    Status Pembayaran : " + pay_status_text;
+                } catch (const std::invalid_argument& ia) {
+                    desc += " (gagal membaca status lama dari: " + lastAction.pre_state + ")";
+                } catch (const std::out_of_range& oor) {
+                    desc += " (gagal membaca status lama dari: " + lastAction.pre_state + ")";
+                }
+            } else {
+                desc += " (format status lama tidak valid: " + lastAction.pre_state + ")";
+            }
             break;
+        }
         case ActionType::CREATE_EVENT:
             desc += "BUAT EVENT BARU\n";
             desc += "  Detail: Event ID " + std::to_string(lastAction.target_id) + " akan dihapus";
@@ -270,11 +347,13 @@ std::string AdminService::peekLastActionDescription() const {
             desc += "  Detail: Event ID " + std::to_string(lastAction.target_id) + 
                     " akan dikembalikan (data: " + lastAction.pre_state + ")";
             break;
-        // case ActionType::EDIT_EVENT: (jika Anda implementasikan)
-        //     desc += "UPDATE EVENT\n";
-        //     desc += "  Detail: Event ID " + std::to_string(lastAction.target_id) + 
-        //             " akan dikembalikan ke state sebelum diedit";
-        //     break;
+            /*
+        case ActionType::EDIT_EVENT:  
+             desc += "UPDATE EVENT\n";
+             desc += "  Detail: Event ID " + std::to_string(lastAction.target_id) + 
+                     " akan dikembalikan ke state sebelum diedit";
+            break;
+            */
         default:
             desc = "Aksi terakhir tidak dikenali.";
             break;

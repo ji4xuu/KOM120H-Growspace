@@ -17,9 +17,9 @@ enum RegistStatus {
     CANCELLED
 };
 
-enum class ActionType {
+enum ActionType {
     CREATE_EVENT,
-    EDIT_EVENT,
+    //EDIT_EVENT,
     DELETE_EVENT,
     VERIFY_REGISTRATION
 };

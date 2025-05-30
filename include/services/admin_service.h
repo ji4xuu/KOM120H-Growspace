@@ -24,9 +24,19 @@ public:
     bool processNextRegistration(bool approve);
 
     // Manajemen Event (CRUD)
-    bool createEvent(const std::string& title, const std::string& desc, const std::string& startDate, int quota);
+    bool createEvent(
+    const std::string& title, 
+    const std::string& description, 
+    const std::string& start_date, 
+    const std::string& end_date,
+    const std::string& registration_start,
+    const std::string& registration_end,
+    int quota,
+    bool is_paid,
+    const std::string& type
+);
     bool deleteEvent(int eventId);
-    bool updateEvent(int eventId, const std::string& newTitle, const std::string& newDesc, int newQuota);
+    // bool updateEvent(int eventId, const std::string& newTitle, const std::string& newDesc, int newQuota);
     // (Fungsi updateEvent bisa ditambahkan di sini jika perlu)
 
     std::string peekLastActionDescription() const;
@@ -34,6 +44,7 @@ public:
     // Fitur Undo (Stack)
     bool undoLastAction();
     void listAllEventsForAdmin() const;
+    Event* findEventById(int eventId);
 
 
 private:
@@ -43,7 +54,7 @@ private:
     Queue<Registration>&       _verifQueue;
     Stack<UndoRecord> _actionStack;
 
-    Event* findEventById(int eventId);
+    
     Registration* findRegistrationById(int registrationId);
     
     // Fungsi untuk mengubah objek Event menjadi string dan sebaliknya, untuk disimpan di UndoRecord

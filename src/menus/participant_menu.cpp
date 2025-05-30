@@ -175,7 +175,7 @@ static void handleCheckStatus(ParticipantService& svc){
         std::cout << "\nEmail atau Password salah.\n";
         pause();
         return;
-    } else if (reg->password_hash != password) {
+    } else if (reg->password_hash != hashPassword(password)) {
         std::cout << "\nEmail atau Password salah.\n";
         pause();
         return;

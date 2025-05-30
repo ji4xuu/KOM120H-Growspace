@@ -117,6 +117,7 @@ bool ParticipantService::registerToEvent(int eventId){
 
     Registration r;
 
+
     int iter = 1;
     do {
         clearScreen();
@@ -132,6 +133,11 @@ bool ParticipantService::registerToEvent(int eventId){
         std::getline(std::cin, ttl);
         if (ttl.empty()){
             std::cout << "Tanggal lahir tidak boleh kosong. (contoh: Jakarta, 2000-01-31).\n";
+            Sleep(1000);
+            continue;
+        }
+        if (!isValidDateFormat(ttl)) {
+            std::cout << "Format tanggal salah (YYYY-MM-DD). Masukkan lagi: ";
             Sleep(1000);
             continue;
         }
@@ -186,7 +192,7 @@ bool ParticipantService::registerToEvent(int eventId){
     r.ttl             = ttl;
     r.nik             = nik;
     r.email           = email;
-    r.password_hash   = password;
+    r.password_hash   = hashPassword(password);
 
     _registrations.push_back(r);
     buildIndexes();
@@ -207,7 +213,6 @@ bool ParticipantService::registerToEvent(int eventId){
         case CANCELLED: status_str = "Cancelled"; break;
     }
 
-    std::cout << "OKE-OKE" << '\n';
 
     std::string payment_str;
     switch (reg->payment_status) {
@@ -215,8 +220,6 @@ bool ParticipantService::registerToEvent(int eventId){
         case UNVERIFIED: payment_str = "Unverified"; break;
         case FAILED: payment_str = "Failed"; break;
     }
-
-    std::cout << "OKE-OKE" << '\n';
 
     constexpr int LBL_W = 18;  
     std::cout << "=== Detail Status Registrasi ===\n\n";

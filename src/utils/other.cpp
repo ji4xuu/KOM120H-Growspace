@@ -24,3 +24,8 @@ void pause() {
     std::cin.ignore();
     std::cin.get();
 }
+
+bool isValidDateFormat(const std::string& date_str) {
+    const std::regex pattern(R"(\d{4}-\d{2}-\d{2})"); // YYYY-MM-DD
+    return std::regex_match(date_str, pattern);
+}

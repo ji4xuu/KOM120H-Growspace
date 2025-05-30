@@ -42,6 +42,18 @@ public:
         current_size++;
     }
 
+    // Implementasi tambahan yang emang butuh
+    void enqueueFront(const T& item) {
+        Node* newNode = new Node(item);
+        if (isEmpty()) {
+            head = tail = newNode;
+        } else {
+            newNode->next = head; // Node baru menunjuk ke head lama
+            head = newNode;       // Head sekarang adalah node baru
+        }
+        current_size++;
+    }
+
     // 4. Implementasi dequeue (menghapus di awal) - O(1)
     void dequeue() {
         if (isEmpty()) {

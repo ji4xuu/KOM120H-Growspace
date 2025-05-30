@@ -11,6 +11,7 @@
 #include <iomanip>
 #include <algorithm>
 #include <windows.h>
+#include <hashing.h>
 
 
 class ParticipantService {

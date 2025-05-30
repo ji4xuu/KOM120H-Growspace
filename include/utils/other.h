@@ -8,13 +8,14 @@
 #include <sstream>
 #include <iomanip>
 #include <iostream>
+#include <regex>
 
 
 void clearScreen();
 std::string getCurrentDate();
 std::string read_line();
 void pause();
-
+bool isValidDateFormat(const std::string& date_str);
 
 #endif
 
