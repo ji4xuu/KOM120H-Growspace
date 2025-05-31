@@ -29,7 +29,10 @@ std::string read_line() {
 // Pause aplikasi sampai user menekan Enter
 void pause() {
     std::cout << "\nTekan Enter untuk melanjutkan... ";
+    std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::string dummy;
+    std::getline(std::cin, dummy);
 }
 
 // Validasi format tanggal YYYY-MM-DD

@@ -196,7 +196,7 @@ bool ParticipantService::registerToEvent(int eventId) {
     std::cout << std::left << std::setw(LBL_W) << "Status Pembayaran"  << ": " << payment_str      << "\n";
     std::cout << std::left << std::setw(LBL_W) << "Dibuat pada"        << ": " << reg->created_at  << "\n\n";
     std::cout << "Simpan baik-baik data registrasi anda.\n";
-    return false;
+    return true;
 }
 
 // Tampilkan detail event

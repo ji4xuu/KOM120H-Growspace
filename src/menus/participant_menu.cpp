@@ -81,6 +81,7 @@ static void handleListEvents(ParticipantService& svc) {
             break;
         } else {
             std::cout << "Input yang diberikan tidak valid." << '\n';
+            Sleep(2000);
         }
         pause();
     }
@@ -121,11 +122,7 @@ static void handleRegister(ParticipantService& svc) {
     }
 
     bool result = svc.registerToEvent(eventId);
-    if (result) {
-        std::cout << "Pendaftaran berhasil.\n";
-    } else {
-        std::cout << "Pendaftaran gagal.\n";
-    }
+    pause();
     std::cout << "Kembali ke Dashboard Peserta..." << '\n';
     Sleep(2000);
 }
