@@ -19,7 +19,6 @@ enum RegistStatus {
 
 enum ActionType {
     CREATE_EVENT,
-    //EDIT_EVENT,
     DELETE_EVENT,
     VERIFY_REGISTRATION
 };
