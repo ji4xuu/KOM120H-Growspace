@@ -114,29 +114,29 @@ bool ParticipantService::registerToEvent(int eventId) {
     while (true) {
         clearScreen();
         std::cout << "Masukkan informasi berikut untuk menyelesaikan pendaftaran.\n";
-        std::cout << "Nama Lengkap                : ";
+        std::cout << "Nama Lengkap                          : ";
         std::getline(std::cin, full_name);
         if (full_name.empty()) { std::cout << "Nama tidak boleh kosong.\n"; Sleep(1000); continue; }
 
-        std::cout << "Tanggal Lahir (YYYY-MM-DD)  : ";
+        std::cout << "Tanggal Lahir (YYYY-MM-DD)            : ";
         std::getline(std::cin, ttl);
         if (ttl.empty() || !isValidDateFormat(ttl)) { std::cout << "Tanggal lahir tidak valid.\n"; Sleep(1000); continue; }
 
-        std::cout << "NIK (16 digit)              : ";
+        std::cout << "NIK (16 digit)                        : ";
         std::getline(std::cin, nik);
         if (nik.size() != 16 || !std::all_of(nik.begin(), nik.end(), ::isdigit)) { std::cout << "NIK harus 16 digit angka.\n"; Sleep(1000); continue; }
 
-        std::cout << "Email                       : ";
+        std::cout << "Email                                 : ";
         std::getline(std::cin, email);
         auto at = email.find('@'), dot = email.rfind('.');
         if (at == std::string::npos || dot == std::string::npos || dot < at) { std::cout << "Format email tidak valid.\n"; Sleep(1000); continue; }
 
-        std::cout << "Password (>=8 char)         : ";
+        std::cout << "Password (>=8 char)                   : ";
         std::getline(std::cin, password);
         if (password.length() < 8) { std::cout << "Password minimal 8 karakter.\n"; Sleep(1000); continue; }
 
         if (ev->is_paid) {
-            std::cout << "No. Rekening/VA             : ";
+        std::cout << "No. Rekening (Contoh : BCA - 1234)    : ";
             std::getline(std::cin, payment_acc);
             if (payment_acc.empty()) { std::cout << "Harap masukkan nomor pembayaran.\n"; Sleep(1000); continue; }
             r.payment_status = UNVERIFIED;
