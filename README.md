@@ -46,7 +46,7 @@ Before building and running Growspace, ensure you have the following installed:
 
 1.  **Clone the Repository (if applicable):**
     ```bash
-    git clone https://github.com/ji4xuuKOM120H-Growspace.git
+    git clone https://github.com/ji4xuu/KOM120H-Growspace.git
     cd [KOM120H-Growspace]
     ```
 
