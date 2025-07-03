@@ -15,7 +15,7 @@ void showLogo() {
 
 )";
     std::cout << std::string(41, '=') << " CLI Based App : Manajemen Workshop dan Pelatihan " << std::string(41, '=') << '\n';
-    std::cout << std::string(50, '=') << " Developed by : Kelompok 7 - P4 " << std::string(50, '=') << "\n\n\n";
+    std::cout << std::string(50, '=') << " Developed by : M. Allif Qalbiy " << std::string(50, '=') << "\n\n\n";
 }
 
 int showMainMenu() {
